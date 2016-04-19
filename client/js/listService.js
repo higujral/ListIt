@@ -1,17 +1,30 @@
 (function(app){
 
-  app.factory('listService', ['$http', function($http){
+  app.factory('postListService', ['$http', function($http){
 
-  var listFactory = {};
+  var postListFactory = {};
 
-  listFactory.saveItem = function(item){
-    alert("factory called. Item is: " + JSON.stringify(item));
+  postListFactory.saveItem = function(item){
 
     return $http.post('http://localhost:3000/postlisting',item);
 
   }
 
-  return listFactory;
+  return postListFactory;
+
+  }]);
+
+  app.factory('getListService',['$http', function($http){
+
+    var getListFactory = {};
+
+    getListFactory.getListings = function(){
+
+      return $http.get('http://localhost:3000/getlistings');
+
+    }
+
+    return getListFactory;
 
   }]);
 
