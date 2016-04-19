@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <div ng-show="viewCtrl.showMessage" class="alert" ng-class="{'fade':postCtrl.doFade,'alert-success':!postCtrl.isError,'alert-danger':postCtrl.isError}">{{postCtrl.message}}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="listing in viewCtrl.listings">
+      <div class="thumbnail">
+        <img src="http://placehold.it/125x80" alt="" width="100%">
+        <div class="caption">
+          <h5>${{listing.price}}</h5>
+          <h5>{{listing.title}}</h5>
+          <h5>{{listing.location}}</h5>
+          <p>{{listing.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
